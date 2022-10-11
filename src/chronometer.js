@@ -5,7 +5,7 @@ class Chronometer {
   }
 
   start(printTimeCallback) {
-    const intervalId = setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.currentTime += 1;
       if (printTimeCallback) printTimeCallback();
     }, 1000);
@@ -36,7 +36,7 @@ class Chronometer {
   }
 
   stop() {
-    // ... your code goes here
+      clearInterval(this.intervalId);
   }
 
   reset() {
